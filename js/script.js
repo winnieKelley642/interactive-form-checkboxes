@@ -37,7 +37,7 @@ document.querySelector('.options').addEventListener('change', (e) => {
   // 2) Create a variable named clickedType to store the `data-type` attribute of the checkbox that was just clicked
   //    - the `getAttribute` method will be helpful here
   var clickedType = clicked.getAttribute('type');
-  console.log(`type: ${clickedType.innerHTML}`);
+  console.log(`type: ${clickedType.value}`);
   // 3) Log out the two variables you just created to confirm their values
 
   // 4) Use the `checkboxes` variable that was created for you above, and a `for` loop to iterate over all the checkbox input elements
