@@ -54,7 +54,7 @@ document.querySelector('.options').addEventListener('change', (e) => {
   //    - We don't want to disable/enable the checkbox that was just clicked
   //    - So check that the clicked checkbox is not the checkbox in the loop's current iteration
   //    - That will look something like this - `(clickedType === checkboxType && clicked !== checkboxes[i])`
-  if(clickedType === checkboxType && clicked !== checkboxType){
+  if(clickedType === checkboxType && clicked !== checkboxes[i]){
     if(clicked.checked){
       console.log(`click check = ${clicked.checked}`);
       checkboxes[i].disabled = true; 
