@@ -37,13 +37,15 @@ document.querySelector('.options').addEventListener('change', (e) => {
   // 2) Create a variable named clickedType to store the `data-type` attribute of the checkbox that was just clicked
   //    - the `getAttribute` method will be helpful here
   var clickedType = clicked.getAttribute('type');
-  console.log(`type: ${clickedType.value}`);
+  console.log(`type: ${clickedType}`);
   // 3) Log out the two variables you just created to confirm their values
 
   // 4) Use the `checkboxes` variable that was created for you above, and a `for` loop to iterate over all the checkbox input elements
   for (let i = 0; i < checkboxes.length; i++){
   // 5) In the loop, create a variable named `checkboxType` to store the `data-type` attribute of the `checkboxes[i]` in the loop's current iteration
     console.log(`in loop`);
+    var checkboxType = checkboxes[i];
+    // console.log(checkboxType);
   // 6) Create an `if` statement to check which items to disable/enable.  Two conditions need to be checked: 
   //    - We only want to disable/enable the item if it in the same list is the selection, 
   //    - So check that the clicked checkbox and the checkbox at the loop's current iteration have the same type
@@ -51,7 +53,15 @@ document.querySelector('.options').addEventListener('change', (e) => {
   //    - We don't want to disable/enable the checkbox that was just clicked
   //    - So check that the clicked checkbox is not the checkbox in the loop's current iteration
   //    - That will look something like this - `(clickedType === checkboxType && clicked !== checkboxes[i])`
-
+  if(clickedType === checkboxType && clicked !== checkboxType){
+    if(clicked.checked){
+      checkboxType.disabled = true;
+      console.log(`checkbox = true`);
+    }else{
+      checkboxType.disabled = false;
+      console.log(`checkbox = false`);
+    }
+  }
   // 7) In the `if` statement, create an `if/else` statement to check one condition:
   //    - If the clicked checkbox is checked or unchecked
   //    - That will look something like this - `(clicked.checked)`;
